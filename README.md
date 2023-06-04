@@ -14,5 +14,5 @@
 https://disk.yandex.ru/i/orYaFo8EHrdufw
 
 ## Screenshorts
-![Screen 1](1.png)
-![Screen 2](2.png)
+![Screen 1](./screenhots/1.png)
+![Screen 2](./screenhots/2.png)
