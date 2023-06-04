@@ -14,7 +14,5 @@
 https://disk.yandex.ru/i/orYaFo8EHrdufw
 
 ## Screenshorts
-
-  <img src="https://imgur.com/a/lIArDj9" width="350">
-![alt text](https://imgur.com/a/lIArDj9)
-![alt text](https://imgur.com/oXl0UjI)
+![Screen 1](1.png)
+![Screen 2](2.png)
