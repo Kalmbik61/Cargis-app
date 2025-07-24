@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Value List - HTML/CSS Version</title>
+    <style>
+        .property-value-list {
+            padding: 8px 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .property-value-item {
+            display: flex;
+            margin: 4px 0;
+            align-items: flex-start;
+        }
+
+        .property-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: #666666;
+            margin-right: 12px;
+            flex-shrink: 0;
+            width: 120px; /* Настраиваемая ширина */
+        }
+
+        .property-value {
+            font-size: 14px;
+            color: #333333;
+            line-height: 20px;
+            flex: 1;
+        }
+
+        /* Адаптивность: при ширине экрана меньше 400px значения переносятся под названия */
+        @media (max-width: 400px) {
+            .property-value-item {
+                flex-direction: column;
+            }
+            
+            .property-name {
+                margin-right: 0;
+                margin-bottom: 2px;
+                width: auto;
+            }
+            
+            .property-value {
+                margin-left: 0;
+            }
+        }
+
+        /* Дополнительные стили для демо */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .demo-section {
+            background-color: #ffffff;
+            margin: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .demo-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .demo-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        /* Вариант с более узкой шириной свойств */
+        .narrow-property .property-name {
+            width: 80px;
+        }
+
+        /* Вариант с другой точкой перехода */
+        @media (max-width: 300px) {
+            .narrow-breakpoint .property-value-item {
+                flex-direction: column;
+            }
+            
+            .narrow-breakpoint .property-name {
+                margin-right: 0;
+                margin-bottom: 2px;
+                width: auto;
+            }
+            
+            .narrow-breakpoint .property-value {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-section">
+        <h1 class="demo-title">PropertyValueList - HTML/CSS Версия</h1>
+        <p class="demo-description">
+            Компонент автоматически адаптируется к ширине экрана.
+            При сужении окна браузера значения переносятся под названия свойств.
+            Попробуйте изменить ширину окна браузера!
+        </p>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="section-title">Стандартный пример:</h2>
+        <div class="property-value-list">
+            <div class="property-value-item">
+                <div class="property-name">Имя:</div>
+                <div class="property-value">Иван Иванович Петров</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Email:</div>
+                <div class="property-value">ivan.petrov@example.com</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Телефон:</div>
+                <div class="property-value">+7 (999) 123-45-67</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Адрес:</div>
+                <div class="property-value">г. Москва, ул. Тверская, д. 1, кв. 123</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Должность:</div>
+                <div class="property-value">Ведущий разработчик программного обеспечения</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Образование:</div>
+                <div class="property-value">Московский государственный технический университет им. Н.Э. Баумана</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Навыки:</div>
+                <div class="property-value">React Native, TypeScript, JavaScript, Python, Git, Docker</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2 class="section-title">С узкой шириной свойств (80px):</h2>
+        <div class="property-value-list narrow-property">
+            <div class="property-value-item">
+                <div class="property-name">Статус:</div>
+                <div class="property-value">Активный</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Создан:</div>
+                <div class="property-value">15 января 2024 года</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Изменен:</div>
+                <div class="property-value">20 января 2024 года в 14:30</div>
+            </div>
+            <div class="property-value-item">
+                <div class="property-name">Описание:</div>
+                <div class="property-value">Длинное описание проекта, которое содержит много важной информации о целях, задачах и ожидаемых результатах работы</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript для динамической демонстрации
+        function updateBreakpoint() {
+            const width = window.innerWidth;
+            const indicator = document.getElementById('width-indicator');
+            if (indicator) {
+                indicator.textContent = `Ширина окна: ${width}px`;
+            }
+        }
+
+        // Добавляем индикатор ширины экрана
+        const indicator = document.createElement('div');
+        indicator.id = 'width-indicator';
+        indicator.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 1000;
+        `;
+        document.body.appendChild(indicator);
+
+        window.addEventListener('resize', updateBreakpoint);
+        updateBreakpoint();
+    </script>
+</body>
+</html>

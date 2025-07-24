@@ -6,6 +6,7 @@ import FilterScreen from "./src/screens/Home/Home";
 import { COLORS } from "./src/styles/styles";
 import Details from "./src/screens/Details/Details";
 import DetailsHeader from "./src/components/DetailsHeader/DetailsHeader";
+import PropertyValueDemo from "./src/screens/PropertyValueDemo/PropertyValueDemo";
 import { FILTER_TYPE } from "./src/components/FiltersList/FiltersList";
 import moment from "moment";
 import "moment/locale/ru";
@@ -21,6 +22,7 @@ export interface IDetailsParams {
 export type RootStackParamList = {
   [ROUTES.HOME]: undefined;
   [ROUTES.DETAILS]: IDetailsParams;
+  [ROUTES.PROPERTY_VALUE_DEMO]: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -60,6 +62,13 @@ const App: React.FC = () => {
             headerStyle: {
               backgroundColor: "#fff",
             },
+          }}
+        />
+        <Stack.Screen
+          name={ROUTES.PROPERTY_VALUE_DEMO}
+          component={PropertyValueDemo}
+          options={{
+            title: "Property Value Demo",
           }}
         />
       </Stack.Navigator>
