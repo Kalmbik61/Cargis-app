@@ -1,0 +1,43 @@
+{
+  "cursor.general.enableAutoCompletion": true,
+  "cursor.chat.enableContextAwareness": true,
+  "cursor.chat.includeCodeContext": true,
+  
+  "// Настройки для агентов": "",
+  "cursor.agents.enabled": true,
+  "cursor.agents.autoActivate": true,
+  "cursor.agents.contextFiles": [
+    ".cursor/instructions.md",
+    ".cursor/rules",
+    ".cursor/agents.md"
+  ],
+  
+  "// Триггеры для активации агента": "",
+  "cursor.agents.triggers": [
+    "@frontend",
+    "@frontend-dev", 
+    "@bitrix-frontend",
+    "модальное окно",
+    "верстка",
+    "компонент",
+    "Figma",
+    "адаптивность"
+  ],
+  
+  "// Файлы для анализа контекста": "",
+  "cursor.context.includePatterns": [
+    "assets/**/*.js",
+    "assets/**/*.scss", 
+    "templates/**/*.php",
+    "local/templates/**/*.php",
+    "*.md"
+  ],
+  
+  "// Исключения из контекста": "",
+  "cursor.context.excludePatterns": [
+    "node_modules/**",
+    "vendor/**",
+    "*.min.js",
+    "*.min.css"
+  ]
+}
